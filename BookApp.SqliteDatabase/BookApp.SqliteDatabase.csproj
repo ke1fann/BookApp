@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1422" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SQLiteDomain\" />
+    <Folder Include="SQLiteDAL\" />
+  </ItemGroup>
+</Project>

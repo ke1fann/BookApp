@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:customControls="clr-namespace:BookApp.Views.CustomControls"
+             xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Style="{x:StaticResource PageStyle}"
+             x:Class="BookApp.Views.RegisterPage">
+  <ContentView>
+        <Grid Padding="30,0,30,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.04*"/>
+                <RowDefinition Height="0.01*"/>
+                <RowDefinition Height="0.04*"/>
+                <RowDefinition Height="0.01*"/>
+                <RowDefinition Height="0.04*"/>
+                <RowDefinition Height="0.01*"/>
+                <RowDefinition Height="0.04*"/>
+                <RowDefinition Height="0.01*"/>
+                <RowDefinition Height="0.04*"/>
+                <RowDefinition Height="0.05*"/>
+                <RowDefinition Height="0.05*"/>
+                <RowDefinition Height="0.3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Source="icon.png"/>
+            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Text="Regiester account"
+                   FontAttributes="Bold" FontSize="22"/>
+            <customControls:ExtendedEntry x:Name="emailEntry" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="you@example.com"
+                                          Text="{Binding Email}"
+                                          ImageHeight="30" ImageWidth="30">
+                <customControls:ExtendedEntry.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Unfocused" Command="{Binding EmailEntryUnfocusedCommand}"/>
+                </customControls:ExtendedEntry.Behaviors>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup>
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource NormalLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource FocusedLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Invalid">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource InvalidLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </customControls:ExtendedEntry>
+
+            <customControls:ExtendedEntry x:Name="userName" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Username"
+                                          Text="{Binding UserName}" MaxLength="18"
+                                          ImageHeight="30"
+                                          ImageWidth="30">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup>
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource NormalLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource FocusedLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Invalid">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource InvalidLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </customControls:ExtendedEntry>
+            <customControls:ExtendedEntry x:Name="passwordEntry" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Password"
+                                          Text="{Binding Password}"
+                                          ImageWidth="30"
+                                          ImageHeight="30"
+                                          >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup>
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource NormalLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource FocusedLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Invalid">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource InvalidLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </customControls:ExtendedEntry>
+
+            <customControls:ExtendedEntry x:Name="confrimPassword" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Confirm password"
+                                          Text="{Binding ConfirmPassword}"
+                                          ImageWidth="30"
+                                          ImageHeight="30"
+                                          >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup>
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource NormalLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource FocusedLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Invalid">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource InvalidLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </customControls:ExtendedEntry>
+            <Button Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" Text="REGISTER" Command="{Binding RegiesterCommand}"/>
+        </Grid>
+    </ContentView>
+</ContentPage>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:BookApp.Views.CustomControls"
+             xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Style="{x:StaticResource PageStyle}"
+             x:Class="BookApp.Views.LoginPage">
+    <ContentView>
+        <Grid Padding="30,0,30,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.05*"/>
+                <RowDefinition Height="0.05*"/>
+                <RowDefinition Height="0.03*"/>
+                <RowDefinition Height="0.05*"/>
+                <RowDefinition Height="0.03*"/>
+                <RowDefinition Height="0.05*"/>
+                <RowDefinition Height="0.03*"/>
+                <RowDefinition Height="0.3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Source="icon.png"/>
+            <customControls:ExtendedEntry x:Name="emailEntry" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="you@example.com"
+                                          Text="{Binding Email}" Image="user.png" ImageHeight="30" ImageWidth="30">
+                <customControls:ExtendedEntry.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="Unfocused" Command="{Binding EmailEntryUnfocusedCommand}"/>
+                </customControls:ExtendedEntry.Behaviors>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup>
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource NormalLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource FocusedLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Invalid">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource InvalidLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </customControls:ExtendedEntry>
+
+            <customControls:ExtendedEntry x:Name="passwordEntry" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Password"
+                                          Text="{Binding Password}"
+                                          Image="password.png"
+                                          ImageWidth="30"
+                                          ImageHeight="30"
+                                          >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup>
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource NormalLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource FocusedLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Invalid">
+                            <VisualState.Setters>
+                                <Setter Property="LineColor" Value="{StaticResource InvalidLineColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+
+            </customControls:ExtendedEntry>
+            <Label Grid.Row="6" Grid.Column="1" HorizontalOptions="End" Text="Forget Password?" FontSize="Small">
+                 <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ForgetPasswordCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Text="LOG IN" Command="{Binding LoginCommand}"/>
+            <Label Grid.Row="8" Grid.Column="0" FontSize="Small" Text="Dont't have an account?" HorizontalOptions="End" TextColor="Black"/>
+            <Label Grid.Row="8" Grid.Column="1" Text="Register Here" HorizontalOptions="Center" FontSize="Small" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentView>
+</ContentPage>

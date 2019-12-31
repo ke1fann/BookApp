@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+       xmlns:customControls="clr-namespace:BookApp.Views.CustomControls"
+       mc:Ignorable="d"
+       x:Class="BookApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="PageStyle" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="#87BF82" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#536DFE"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style>
+            <Style TargetType="customControls:ExtendedEntry">
+                <Setter Property="BackgroundColor" Value="#eaebe3"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+
+            <Color x:Key="FocusedLineColor">#D87E56</Color>
+            <Color x:Key="InvalidLineColor">#DC143C</Color>
+            <Color x:Key="NormalLineColor">#eaebe3</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>
