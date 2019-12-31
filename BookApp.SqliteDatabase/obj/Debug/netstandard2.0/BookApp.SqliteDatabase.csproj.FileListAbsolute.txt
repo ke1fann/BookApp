@@ -1,0 +1,8 @@
+/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/bin/Debug/netstandard2.0/BookApp.SqliteDatabase.deps.json
+/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/bin/Debug/netstandard2.0/BookApp.SqliteDatabase.dll
+/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/bin/Debug/netstandard2.0/BookApp.SqliteDatabase.pdb
+/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/obj/Debug/netstandard2.0/BookApp.SqliteDatabase.csprojAssemblyReference.cache
+/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/obj/Debug/netstandard2.0/BookApp.SqliteDatabase.AssemblyInfoInputs.cache
+/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/obj/Debug/netstandard2.0/BookApp.SqliteDatabase.AssemblyInfo.cs
+/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/obj/Debug/netstandard2.0/BookApp.SqliteDatabase.dll
+/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/obj/Debug/netstandard2.0/BookApp.SqliteDatabase.pdb

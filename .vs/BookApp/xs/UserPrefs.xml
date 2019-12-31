@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{3BD426F3-5B62-47AD-8F4B-82CB2F59DC32}|Default">
+  <MonoDevelop.Ide.ItemProperties.BookApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.3868BA0D-E037-4D4C-AFDE-C5513F03D80D" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BookApp/ViewModels/RegisterPageViewModel.cs">
+    <Files>
+      <File FileName="BookApp/ViewModels/RegisterPageViewModel.cs" Line="83" Column="44" />
+      <File FileName="BookApp/Views/RegisterPage.xaml.cs" />
+      <File FileName="BookApp/Views/RegisterPage.xaml" />
+      <File FileName="BookApp/Views/LoginPage.xaml.cs" />
+      <File FileName="BookApp/Views/App.xaml.cs" />
+      <File FileName="BookApp/ViewModels/LoginPageViewModel.cs" />
+      <File FileName="BookApp.SqliteDatabase/ISqlite.cs" />
+      <File FileName="BookApp.SqliteDatabase/SQLiteDAL/SqliteDal.cs" />
+      <File FileName="BookApp.iOS/AppDelegate.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BookApp" expanded="True" selected="True">
+            <Node name="BookApp" expanded="True">
+              <Node name="Resources" expanded="True" />
+              <Node name="Utilities" expanded="True">
+                <Node name="Const" expanded="True" />
+              </Node>
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="App.xaml" expanded="True" />
+                <Node name="LoginPage.xaml" expanded="True" />
+                <Node name="RegisterPage.xaml" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="BookApp.iOS" expanded="True">
+              <Node name="References" expanded="True" />
+            </Node>
+            <Node name="BookApp.SqliteDatabase" expanded="True">
+              <Node name="SQLiteDomain" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>BookApp.Android/BookApp.Android.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
