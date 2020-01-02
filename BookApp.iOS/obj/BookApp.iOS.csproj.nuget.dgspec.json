@@ -157,7 +157,11 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/BookApp.SqliteDatabase.csproj": {
+                "projectPath": "/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/BookApp.SqliteDatabase.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -6,6 +6,6 @@ namespace BookApp.Utilities
         public static string EmailLoginValidation = "EmailLoginValidation";
         public static string PasswordLoginValidation = "PasswordLoginValidation";
         public static string UserNameValidation = "UserNameValidation";
-        
+        public static string ValidationInvalidKey = "ValidationInvalidKey";
     }
 }

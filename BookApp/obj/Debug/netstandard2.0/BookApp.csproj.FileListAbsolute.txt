@@ -12,3 +12,8 @@
 /Users/shinetech/Projects/BookApp/BookApp/obj/Debug/netstandard2.0/BookApp.dll
 /Users/shinetech/Projects/BookApp/BookApp/obj/Debug/netstandard2.0/BookApp.pdb
 /Users/shinetech/Projects/BookApp/BookApp/obj/Debug/netstandard2.0/BookApp.csprojAssemblyReference.cache
+/Users/shinetech/Projects/BookApp/BookApp/obj/Debug/netstandard2.0/Views/ResetPage.xaml.g.cs
+/Users/shinetech/Projects/BookApp/BookApp/obj/Debug/netstandard2.0/Views/HomePage.xaml.g.cs
+/Users/shinetech/Projects/BookApp/BookApp/bin/Debug/netstandard2.0/BookApp.SqliteDatabase.dll
+/Users/shinetech/Projects/BookApp/BookApp/bin/Debug/netstandard2.0/BookApp.SqliteDatabase.pdb
+/Users/shinetech/Projects/BookApp/BookApp/obj/Debug/netstandard2.0/BookApp.csproj.CopyComplete

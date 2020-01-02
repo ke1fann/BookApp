@@ -24,6 +24,7 @@ namespace BookApp
         {
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
+            containerRegistry.RegisterForNavigation<ResetPage,ResetPageViewModel>();
         }
     }
 }

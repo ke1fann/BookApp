@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using BookApp.iOS.Implementation;
+using BookApp.SqliteDatabase;
 using BookApp.SqliteDatabase.SQLiteDAL;
 using Foundation;
 using Prism;
 using Prism.Ioc;
 using UIKit;
+using Xamarin.Forms;
 
 namespace BookApp.iOS
 {
@@ -26,15 +29,19 @@ namespace BookApp.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
-
+            DependencyService.Register<ISqlite, SqliteImpl>();
             return base.FinishedLaunching(app, options);
         }
 
+        
+
         public class iOSInitializer : IPlatformInitializer
         {
+
             public void RegisterTypes(IContainerRegistry containerRegistry)
             {
-                //containerRegistry.RegisterInstance<ISqliteDal>(SqliteDal);
+                containerRegistry.RegisterInstance<ISqliteDal>(new SqliteDal());
+                containerRegistry.RegisterInstance<ISqlite>(new SqliteImpl());
             }
         }
     }

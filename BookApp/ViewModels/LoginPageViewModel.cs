@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
+using BookApp.SqliteDatabase.SQLiteDAL;
 using BookApp.Utilities;
 using BookApp.Utilities.Const;
 using Prism.Mvvm;
@@ -11,6 +12,7 @@ namespace BookApp.ViewModels
 {
     public class LoginPageViewModel : BindableBase
     {
+        private readonly ISqliteDal _sqliteDal;
         private readonly INavigationService _navigationService;
         private ICommand _forgetPasswordCommand;
         private ICommand _registerCommand;
@@ -43,8 +45,9 @@ namespace BookApp.ViewModels
         }
 
 
-        public LoginPageViewModel(INavigationService navigationService)
+        public LoginPageViewModel(INavigationService navigationService,ISqliteDal sqliteDal)
         {
+            _sqliteDal = sqliteDal;
             _navigationService = navigationService;
         }
 
@@ -57,7 +60,7 @@ namespace BookApp.ViewModels
         public ICommand ForgetPasswordCommand => _forgetPasswordCommand ?? (_forgetPasswordCommand = new Command(ForgetPassword));
         private void ForgetPassword()
         {
-
+            _navigationService.NavigateAsync("/LoginPage/RegisterPage");
         }
 
         public ICommand RegisterCommand => _registerCommand ?? (_registerCommand = new Command(Register));
@@ -70,20 +73,15 @@ namespace BookApp.ViewModels
         private void Login()
         {
 
-            var isInvaildEmail = IsEmail(Email);
+            var isInvaildEmail = BookAppConst.IsInvalidEmail(Email);
 
             EmailInvaild = !string.IsNullOrEmpty(Email) && isInvaildEmail;
             PasswordInvaild = !string.IsNullOrEmpty(Password);
-            MessagingCenter.Send(this, MessageKey.EmailLoginValidation);
-            MessagingCenter.Send(this, MessageKey.PasswordLoginValidation);
-        }
+            MessagingCenter.Send(this, MessageKey.ValidationInvalidKey);
 
-        public static bool IsEmail(string inputData)
-        {
-            if (string.IsNullOrEmpty(inputData)) return false;
-
-            Regex RegEmail = new Regex("^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$");
-            return RegEmail.IsMatch(inputData);
+            if (!EmailInvaild || !PasswordInvaild) return;
+            if (!_sqliteDal.Login(Email, Password)) return;
+            _navigationService.NavigateAsync(NavigationTo.HomePage);
         }
     }
 

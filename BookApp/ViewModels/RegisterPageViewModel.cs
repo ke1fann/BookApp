@@ -1,6 +1,6 @@
-﻿using System;
-using System.Text.RegularExpressions;
-using System.Windows.Input;
+﻿using System.Windows.Input;
+using BookApp.SqliteDatabase.SQLiteDAL;
+using BookApp.SqliteDatabase.SQLiteDomain;
 using BookApp.Utilities;
 using BookApp.Utilities.Const;
 using Prism.Mvvm;
@@ -12,6 +12,7 @@ namespace BookApp.ViewModels
     public class RegisterPageViewModel : BindableBase
     {
         private readonly INavigationService _navigationService;
+        private readonly ISqliteDal _sqliteDal;
         private string _email;
         private string _userName;
         private string _password;
@@ -21,8 +22,6 @@ namespace BookApp.ViewModels
         private bool _isUsernameInvalid;
         private bool _isPasswordInvalid;
         private ICommand _regiesterCommand;
-
-
 
 
         public string Email
@@ -66,33 +65,32 @@ namespace BookApp.ViewModels
             set => SetProperty(ref _isPasswordInvalid, value);
         }
 
-        public RegisterPageViewModel(INavigationService navigationService)
+        public RegisterPageViewModel(INavigationService navigationService, ISqliteDal sqliteDal)
         {
             _navigationService = navigationService;
+            _sqliteDal = sqliteDal;
         }
 
         public ICommand RegiesterCommand => _regiesterCommand ?? (_regiesterCommand = new Command(Regiester));
         private void Regiester()
         {
-            IsEmailInvalid = !string.IsNullOrEmpty(Email) && IsEmail(Email);
+            IsEmailInvalid = !string.IsNullOrEmpty(Email) && BookAppConst.IsInvalidEmail(Email);
             IsUserNameInvalid = !string.IsNullOrEmpty(UserName);
             IsPasswordInvalid = Password == ConfirmPassword && !string.IsNullOrEmpty(Password) && !string.IsNullOrEmpty(ConfirmPassword);
 
-            MessagingCenter.Send(this, MessageKey.EmailLoginValidation);
-            MessagingCenter.Send(this, MessageKey.UserNameValidation);
-            MessagingCenter.Send(this, MessageKey.PasswordLoginValidation);
+            MessagingCenter.Send(this, MessageKey.ValidationInvalidKey);
+            var user = new UserInformation
+            {
+                Email = Email,
+                UserName = UserName,
+                Password = Password
+            };
 
             if (!IsEmailInvalid || !IsUserNameInvalid || !IsPasswordInvalid) return;
+            if (!_sqliteDal.Register(user)) return;
+
             _navigationService.GoBackAsync();
             
-        }
-
-        public static bool IsEmail(string inputData)
-        {
-            if (string.IsNullOrEmpty(inputData)) return false;
-
-            Regex RegEmail = new Regex("^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$");
-            return RegEmail.IsMatch(inputData);
         }
     }
 }

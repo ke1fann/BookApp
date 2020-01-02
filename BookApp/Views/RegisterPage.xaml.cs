@@ -11,7 +11,7 @@ namespace BookApp.Views
         public RegisterPage()
         {
             InitializeComponent();
-            MessagingCenter.Subscribe<RegisterPageViewModel>(this, MessageKey.EmailLoginValidation, OnRegisterRequested);
+            MessagingCenter.Subscribe<RegisterPageViewModel>(this, MessageKey.ValidationInvalidKey, OnRegisterRequested);
         }
 
          void OnRegisterRequested(RegisterPageViewModel registerPageViewModel)

@@ -1,38 +1,37 @@
 ﻿<Properties StartupConfiguration="{3BD426F3-5B62-47AD-8F4B-82CB2F59DC32}|Default">
   <MonoDevelop.Ide.ItemProperties.BookApp.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.3868BA0D-E037-4D4C-AFDE-C5513F03D80D" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BookApp/ViewModels/RegisterPageViewModel.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="BookApp/ViewModels/RegisterPageViewModel.cs" Line="83" Column="44" />
-      <File FileName="BookApp/Views/RegisterPage.xaml.cs" />
-      <File FileName="BookApp/Views/RegisterPage.xaml" />
-      <File FileName="BookApp/Views/LoginPage.xaml.cs" />
-      <File FileName="BookApp/Views/App.xaml.cs" />
-      <File FileName="BookApp/ViewModels/LoginPageViewModel.cs" />
-      <File FileName="BookApp.SqliteDatabase/ISqlite.cs" />
-      <File FileName="BookApp.SqliteDatabase/SQLiteDAL/SqliteDal.cs" />
-      <File FileName="BookApp.iOS/AppDelegate.cs" />
+      <File FileName="BookApp.iOS/Implementation/SqliteImpl.cs" Line="14" Column="27" />
+      <File FileName="BookApp.iOS/AppDelegate.cs" Line="21" Column="11" />
+      <File FileName="BookApp.SqliteDatabase/SQLiteDAL/SqliteDal.cs" Line="15" Column="1" />
+      <File FileName="BookApp.iOS/Main.cs" Line="21" Column="1" />
+      <File FileName="BookApp.SqliteDatabase/ISqlite.cs" Line="11" Column="1" />
+      <File FileName="BookApp.SqliteDatabase/SQLiteDAL/ISqliteDal.cs" Line="1" Column="1" />
+      <File FileName="BookApp/ViewModels/RegisterPageViewModel.cs" Line="81" Column="16" />
+      <File FileName="BookApp/Views/CustomControls/ExtendedEntry.cs" Line="22" Column="1" />
+      <File FileName="BookApp.iOS/Renderers/ExtendedEntryRenderer.cs" Line="51" Column="73" />
+      <File FileName="BookApp/Views/LoginPage.xaml" Line="50" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BookApp" expanded="True" selected="True">
             <Node name="BookApp" expanded="True">
-              <Node name="Resources" expanded="True" />
-              <Node name="Utilities" expanded="True">
-                <Node name="Const" expanded="True" />
-              </Node>
+              <Node name="Dependencies" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="App.xaml" expanded="True" />
+                <Node name="CustomControls" expanded="True" />
+                <Node name="HomePage.xaml" expanded="True" />
                 <Node name="LoginPage.xaml" expanded="True" />
-                <Node name="RegisterPage.xaml" expanded="True" />
               </Node>
             </Node>
             <Node name="BookApp.iOS" expanded="True">
-              <Node name="References" expanded="True" />
+              <Node name="Implementation" expanded="True" />
+              <Node name="Renderers" expanded="True" />
             </Node>
             <Node name="BookApp.SqliteDatabase" expanded="True">
-              <Node name="SQLiteDomain" expanded="True" />
+              <Node name="SQLiteDAL" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -45,7 +44,11 @@
   </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/shinetech/Projects/BookApp/BookApp/ViewModels/RegisterPageViewModel.cs" relfile="BookApp/ViewModels/RegisterPageViewModel.cs" line="76" column="1" />
+      <Breakpoint file="/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/SQLiteDAL/SqliteDal.cs" relfile="BookApp.SqliteDatabase/SQLiteDAL/SqliteDal.cs" line="39" column="10" />
+      <Breakpoint file="/Users/shinetech/Projects/BookApp/BookApp.SqliteDatabase/SQLiteDAL/yg7v7gnz.3dz~" relfile="BookApp.SqliteDatabase/SQLiteDAL/yg7v7gnz.3dz~" line="31" column="10" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

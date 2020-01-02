@@ -1,5 +1,5 @@
-﻿using System;
-using SQLite;
+﻿using SQLite;
+
 
 namespace BookApp.SqliteDatabase
 {

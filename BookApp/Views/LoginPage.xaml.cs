@@ -9,8 +9,7 @@ namespace BookApp.Views
         public LoginPage()
         {
             InitializeComponent();
-            MessagingCenter.Subscribe<LoginPageViewModel>(this, MessageKey.EmailLoginValidation, OnLoginREquested);
-            MessagingCenter.Subscribe<LoginPageViewModel>(this, MessageKey.PasswordLoginValidation, OnLoginREquested);
+            MessagingCenter.Subscribe<LoginPageViewModel>(this, MessageKey.ValidationInvalidKey, OnLoginREquested);
         }
 
         void OnLoginREquested(LoginPageViewModel loginPageViewModel)

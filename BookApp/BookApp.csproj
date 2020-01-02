@@ -39,4 +39,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookApp.SqliteDatabase\BookApp.SqliteDatabase.csproj" />
+  </ItemGroup>
 </Project>

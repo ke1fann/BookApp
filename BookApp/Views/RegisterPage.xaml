@@ -30,7 +30,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Source="icon.png"/>
-            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Text="Regiester account"
+            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Text="Register account"
                    FontAttributes="Bold" FontSize="22"/>
             <customControls:ExtendedEntry x:Name="emailEntry" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="you@example.com"
                                           Text="{Binding Email}"
